@@ -16,7 +16,7 @@ services:
       - DELUGE_LOGLEVEL=error
     volumes:
       - ./deluge_config:/config
-      - /mnt/wd1tb/downloads:/downloads
+      - /mnt/wd1tb:/srv/wd1tb
     ports:
       - 8112:8112
       - 6881:6881
@@ -54,7 +54,7 @@ services:
   #     # - AUTO_UPDATE=true
   #   volumes:
   #     - ./jackett_config:/config
-  #     - /mnt/wd1tb/downloads:/downloads
+  #     - /mnt/wd1tb:/srv/wd1tb
   #   ports:
   #     - 9117:9117
   #   restart: unless-stopped
@@ -73,7 +73,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ./radarr_config:/config
-      - /mnt/wd1tb/downloads:/downloads
+      - /mnt/wd1tb:/srv/wd1tb
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -90,7 +90,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - ./sonarr_config:/config
-      - /mnt/wd1tb/downloads:/downloads
+      - /mnt/wd1tb:/srv/wd1tb
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -107,7 +107,7 @@ services:
 #     - TZ=Etc/UTC
 #   volumes:
 #     - ./bazarr_config:/config
-#     - /mnt/wd1tb/downloads:/downloads
+#     - /mnt/wd1tb:/srv/wd1tb
 #   ports:
 #     - 6767:6767
 #   restart: unless-stopped
@@ -124,7 +124,7 @@ services:
 #      - TZ=Etc/UTC
 #    volumes:
 #      - ./readarr_config:/config
-#      - /mnt/wd1tb/downloads:/books
+#      - /mnt/wd1tb:/srv/wd1tb
 #    ports:
 #      - 8787:8787
 #    restart: unless-stopped
